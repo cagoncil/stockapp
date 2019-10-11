@@ -1,5 +1,35 @@
-<h1>This is my Handebars Homepage...</h1>
+<div class="jumbotron border border-dark my-auto">
+  <h1 class="display-4 text-center rounded">{{ stock.companyName }} ({{ stock.symbol }})</h1>
+  <hr class="my-4">
+	<div class="row rounded">
+	<div class="col-xs-12 mx-auto">
+		<h5><strong>Latest Price:</strong> ${{ stock.latestPrice }}</h5>
+		<h5><strong>Yesterday's Price:</strong> ${{ stock.previousClose }}</h5>
+		<h5><strong>Percent Change:</strong> {{ stock.changePercent }}</h5>
+		<h5><strong>Year-To-Date Change:</strong> {{ stock.ytdChange }}</h5>
+		<h5><strong>Market Cap:</strong> {{ stock.marketCap }}</h5>
+		<h5><strong>52 Week High:</strong> ${{ stock.week52High }}</h5>
+		<h5><strong>52 Week Low:</strong> ${{ stock.week52Low }}</h5>
+	</div>
+	</div>
+</div>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde nobis, nihil vitae. Voluptates voluptatibus ab quaerat tempora nemo aperiam perferendis corrupti incidunt recusandae illum nisi delectus autem, deserunt dolore rem aliquid, in. Minima blanditiis, sed esse nisi, recusandae nihil debitis ipsum architecto deserunt amet saepe, excepturi quae odit quisquam labore consequatur hic! Dignissimos, quo sequi quaerat labore iusto perspiciatis dolore delectus quidem necessitatibus rerum eveniet, aspernatur obcaecati natus corrupti voluptate. Culpa voluptas libero maxime cupiditate laudantium iusto magnam ipsum autem voluptatum voluptates perspiciatis dolorum quae quia asperiores quos, numquam reprehenderit, deserunt, dolore possimus tenetur assumenda optio ut velit. Harum, et.
 
-<p>{{ stuff }}</p>
+<!--
+<h1>{{ stock.companyName }} (<strong>{{ stock.symbol }}</strong>)</h1>
+
+
+<br>
+
+<h5><strong>Latest Price:</strong> ${{ stock.latestPrice }}</h5>
+<h5><strong>Yesterday's Price:</strong> ${{ stock.previousClose }}</h5>
+<h5><strong>Percent Change:</strong> <span id="percent">{{ stock.changePercent }}</span></h5>
+<h5><strong>Year-To-Date Change:</strong> {{ stock.ytdChange }}</h5>
+<h5><strong>Market Cap:</strong> {{ stock.marketCap }}</h5>
+<h5><strong>52 Week High:</strong> ${{ stock.week52High }}</h5>
+<h5><strong>52 Week Low:</strong> ${{ stock.week52Low }}</h5>
+<br> -->
+
+<!-- {{#each stock}}
+	{{@key}} | {{this}}<br>
+{{/each}} -->

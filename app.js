@@ -9,6 +9,8 @@
 		// now instead of 'node app.js', type 'npm run dev'
 	// npm install express-handlebars
 	// npm run dev
+	// npm install request
+	// npm install body-parser
 
 
 // ============ Stock market Portfolio App ============
@@ -18,24 +20,72 @@
 	const express = require('express');
 	const app = express();
 
-// define path:
-	const path = require('path');
-
 // initialize handlebars:
 	const exphbs = require('express-handlebars');
 
+// define path:
+	const path = require('path');
+
+// initialize request:
+	const request = require('request');
+
+// initialize body parser:
+	const bodyParser = require('body-parser');
+
 // need to run node server and tell app which port to listen on
 	const PORT = process.env.PORT || 5000; // use web hosting port OR use localhost:5000
+
+
+// use body parser middleware:
+	app.use(bodyParser.urlencoded({extended: false}));
+
+
+// API KEY: pk_df3efbbccfc74aeca42118a808de91c6
+// create callAPI function
+function callAPI(APIisFinished, ticker) { // APIisFinished calls back function(finishedAPI)
+	request('https://cloud.iexapis.com/stable/stock/' + ticker + '/quote?token=pk_df3efbbccfc74aeca42118a808de91c6', { json: true }, (err, res, body) => {
+		if (err) {return console.log(err);}
+		if (res.statusCode === 200) {
+			// console.log(body);
+			APIisFinished(body);
+		}
+	});
+}
+
+
 
 // set handlebars middleware:
 	app.engine('handlebars', exphbs()); 
 	app.set('view engine', 'handlebars'); 
 
-// set handlebar routes (don't need to set routes for express in this instance)
+// set handlebar index GET route (don't need to set routes for express in this instance)
 	app.get('/', function (req, res) {
-		res.render('home', {
-			stuff: "This is stuff..."
-		});
+		// need callback function for API to work:
+		callAPI(function(finishedAPI) {
+			res.render('home', {
+				stock: finishedAPI
+			});
+		}, "goog"); // sets homepage to google stock
+		// old API code (doesn't work):
+		// const api = callAPI(); // create variable for api to call it
+		// res.render('home', {
+			// stock: api
+		// });
+	});
+
+	// set handlebar index POST route
+	app.post('/', function (req, res) {
+		callAPI(function(finishedAPI) {
+			// posted_stuff = req.body.stock_ticker;
+			res.render('stocklookup', {
+				stock: finishedAPI
+			});
+		}, req.body.stock_ticker);
+	});
+
+// create about page route for about.html
+	app.get('/about.html', function (req, res) {
+		res.render('about');
 	});
 
 // followed instructions for dir structure: https://www.npmjs.com/package/express-handlebars#basic-usage
@@ -47,3 +97,4 @@
 
 // set static folder ('public') then create path and route to index.html page inside that folder; takes care of routing
 	app.use(express.static(path.join(__dirname, 'public'))); // defines path to public directory
+

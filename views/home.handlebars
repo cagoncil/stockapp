@@ -1,35 +1,44 @@
-<div class="jumbotron border border-dark my-auto">
-  <h1 class="display-4 text-center rounded">{{ stock.companyName }} ({{ stock.symbol }})</h1>
-  <hr class="my-4">
-	<div class="row rounded">
-	<div class="col-xs-12 mx-auto">
-		<h5><strong>Latest Price:</strong> ${{ stock.latestPrice }}</h5>
-		<h5><strong>Yesterday's Price:</strong> ${{ stock.previousClose }}</h5>
-		<h5><strong>Percent Change:</strong> {{ stock.changePercent }}</h5>
-		<h5><strong>Year-To-Date Change:</strong> {{ stock.ytdChange }}</h5>
-		<h5><strong>Market Cap:</strong> {{ stock.marketCap }}</h5>
-		<h5><strong>52 Week High:</strong> ${{ stock.week52High }}</h5>
-		<h5><strong>52 Week Low:</strong> ${{ stock.week52Low }}</h5>
-	</div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Stock Market Data</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="investingsite.css">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Merriweather|Montserrat:400,700|Raleway" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg mx-auto">
+			<div id="content">
+
+				<h1>Invest in yourself</h1>
+				<h4>Maximize your potential by maximizing your net worth</h4>
+				<br><br>
+				<a href="about.html"><button type="button" class="btn btn-danger">&emsp; Get Started &emsp;</button></a>
+
+			</div>
+		</div>
 	</div>
 </div>
 
 
-<!--
-<h1>{{ stock.companyName }} (<strong>{{ stock.symbol }}</strong>)</h1>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-<br>
-
-<h5><strong>Latest Price:</strong> ${{ stock.latestPrice }}</h5>
-<h5><strong>Yesterday's Price:</strong> ${{ stock.previousClose }}</h5>
-<h5><strong>Percent Change:</strong> <span id="percent">{{ stock.changePercent }}</span></h5>
-<h5><strong>Year-To-Date Change:</strong> {{ stock.ytdChange }}</h5>
-<h5><strong>Market Cap:</strong> {{ stock.marketCap }}</h5>
-<h5><strong>52 Week High:</strong> ${{ stock.week52High }}</h5>
-<h5><strong>52 Week Low:</strong> ${{ stock.week52Low }}</h5>
-<br> -->
-
-<!-- {{#each stock}}
-	{{@key}} | {{this}}<br>
-{{/each}} -->
+</body>
+</html>

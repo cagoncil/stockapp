@@ -1,0 +1,117 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow:hidden; /*no scroll bar if page overflows*/
+}
+
+/*the bg-opacity property adds black opacity to background image*/
+.bg-opacity{
+    position: relative;
+    background-color: #000;
+}
+
+.bg-opacity::before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.5;
+    background: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80") 
+    			no-repeat center center;
+    background-size: cover;
+}
+
+#content {
+	text-align: center;
+	padding-top: 16%;
+	padding-bottom: 20%;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 4.55em;
+	color: #D7CDC1;
+	font-family: 'Montseratt', sans-serif;
+	text-shadow: 1px 4px 3px rgba(0,0,0,0.45), 0px 8px 13px rgba(0,0,0,0.3), 0px 18px 23px rgba(0,0,0,0.25);
+}
+
+h4 {
+	color: #e29581;
+	font-family: 'Raleway', sans-serif;
+/*	text-shadow: 1px 3px 3px rgba(0,0,0,0.3), 0px 8px 13px rgba(0,0,0,0.2), 0px 18px 23px rgba(0,0,0,0.15);
+*/}
+
+/*hr {
+	width: 400px;
+	border-top: 1px solid #DD1D63;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}*/
+
+/* Navbar brand and navbar link font color */
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
+	color: #ede8e3; 
+	padding-right: 20px;
+}
+
+/* Navbar link font STYLES and text shadow */
+/*.navbar-light .navbar-brand, a {
+
+}*/
+
+/*.navbar-light .navbar-brand {
+
+}
+
+a {
+
+}*/
+
+/* Navbar link hover/active font color */
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus,  /*Changes color of navbar-brand*/
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus /*Changes color of all the navbar links*/ {
+        text-decoration: none;
+        background-color: transparent !important;
+        color: 	#D7CDC1;
+        cursor: default;
+}
+
+/* Toggler button border color when active */
+ .custom-toggler:focus, .custom-toggler .navbar-toggler:focus {
+ 	  outline-color: rgb(207,118,111);
+ }
+
+
+
+/* Reservation button */
+.btn-danger {
+	font-family: 'Lato', sans-serif;
+	font-size: 17px;
+	font-weight: 600;  
+  color: rgba(217, 83, 78, 0.75);
+  letter-spacing: 1px;
+  line-height: 25px;
+  border: 2px solid #D7CDC1;
+  border-radius: 40px;
+  background: #D7CDC1;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active,
+.btn.btn-danger.active.focus,
+.btn.btn-danger.active:focus,
+.btn.btn-danger.active:hover,
+.btn.btn-danger:active.focus,
+.btn.btn-danger:active:focus,
+.btn.btn-danger:active:hover {
+  color: #FFF;
+  background: rgba(217, 83, 78, 1.0);
+  border: 2px solid rgba(217, 83, 78, 0.75);
+  outline: none !important;
+  box-shadow: none !important;
+}
+

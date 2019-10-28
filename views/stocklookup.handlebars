@@ -1,17 +1,19 @@
 
-<div class="jumbotron border border-dark my-auto">
-  <h1 class="display-4 text-center rounded">{{ stock.companyName }} ({{ stock.symbol }})</h1>
-  <hr class="my-4">
-	<div class="row rounded">
-	<div class="col-xs-12 mx-auto">
-		<h5><strong>Latest Price:</strong> ${{ stock.latestPrice }}</h5>
-		<h5><strong>Yesterday's Price:</strong> ${{ stock.previousClose }}</h5>
-		<h5><strong>Percent Change:</strong> {{ stock.changePercent }}</h5>
-		<h5><strong>Year-To-Date Change:</strong> {{ stock.ytdChange }}</h5>
-		<h5><strong>Market Cap:</strong> {{ stock.marketCap }}</h5>
-		<h5><strong>52 Week High:</strong> ${{ stock.week52High }}</h5>
-		<h5><strong>52 Week Low:</strong> ${{ stock.week52Low }}</h5>
-	</div>
+<div class="container mt-5">
+	<div class="jumbotron border border-dark my-auto">
+	  <h1 class="display-4 text-center rounded">{{ stock.companyName }} ({{ stock.symbol }})</h1>
+	  <hr class="my-4">
+		<div class="row rounded">
+		<div class="col-xs-12 mx-auto">
+			<h5><strong>Latest Price:</strong> ${{ stock.latestPrice }}</h5>
+			<h5><strong>Yesterday's Price:</strong> ${{ stock.previousClose }}</h5>
+			<h5><strong>Percent Change:</strong> {{ stock.changePercent }}</h5>
+			<h5><strong>Year-To-Date Change:</strong> {{ stock.ytdChange }}</h5>
+			<h5><strong>Market Cap:</strong> {{ stock.marketCap }}</h5>
+			<h5><strong>52 Week High:</strong> ${{ stock.week52High }}</h5>
+			<h5><strong>52 Week Low:</strong> ${{ stock.week52Low }}</h5>
+		</div>
+		</div>
 	</div>
 </div>
 

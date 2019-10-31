@@ -92,6 +92,10 @@ h4 {
   box-shadow: none !important;
 }
 
+input {
+  background-color: #D7CDC1;
+}
+
 footer {
   text-align: center;
   color: #e29581;

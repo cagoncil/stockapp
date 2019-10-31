@@ -1,0 +1,124 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow:hidden;
+	background-color: #292b2c;
+}
+
+/*the bg-opacity property adds black opacity to background image*/
+.bg-opacity{
+    position: relative;
+    background-color: black;
+}
+
+.bg-opacity::before {
+	position: absolute;
+	content: ' ';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+	opacity: 0.4;
+	    background: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80") 
+    			no-repeat center center;
+    background-size: cover;
+}
+
+.container {
+	height: 100vh;
+}
+
+.content {
+	padding: 15vh 0;
+	color: white;
+	z-index: 100;
+	position: relative;
+}
+
+.content::before {
+	position: absolute;
+	content: ' ';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+h1, h3, a {
+	color: #e29581;
+}
+
+p {
+	font-size: 1.15em;
+}
+
+footer {
+  text-align: center;
+  color: #e29581;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 5px;
+  background-color: #292b2c;
+}
+
+
+ .navbar-toggler:focus, button .navbar-toggler:focus {
+ 	outline-color: rgb(207,118,111);
+ }
+
+/* input:focus, input .form-control:focus, .form-control:focus {
+	outline-color: none;
+	border-color: 1px solid #292b2c;
+ }*/
+
+
+/*=========== Stock Lookup ===========*/
+
+.break {
+	height: 50px;
+}
+
+.stocks {
+	z-index: 2;
+	position: relative;
+}
+
+.stocks::before {
+	position: absolute;
+	content: ' ';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+
+
+/*========== Media Queries ===========*/
+
+ @media only screen and (max-width: 600px) {
+ 	
+	  h1 {
+	    margin: 0;
+	    font-size: calc(2.5em + 6 * ((100vw - 320px) / 680));
+	  }
+
+	  h5 {
+	    margin: 0.2em 0;
+	    font-size: calc(1.15em + 6 * ((100vw - 320px) / 680));
+	  }
+
+	.content {
+		padding: 5vh 0;
+	}
+
+ }

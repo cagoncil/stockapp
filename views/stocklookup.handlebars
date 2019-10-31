@@ -1,10 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<div class="container mt-5">
-	<div class="jumbotron border border-dark my-auto">
-	  <h1 class="display-4 text-center rounded">{{ stock.companyName }} ({{ stock.symbol }})</h1>
+	<title>Stock Market Data</title>
+
+<link rel="stylesheet" type="text/css" href="about.css">
+
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Merriweather|Montserrat:400,700|Raleway" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="break"></div>
+	<div class="jumbotron">
+	  <h1 class="display-4 text-center rounded stocks">{{ stock.companyName }} ({{ stock.symbol }})</h1>
 	  <hr class="my-4">
 		<div class="row rounded">
-		<div class="col-xs-12 mx-auto">
+		<div class="col-xs-12 mx-auto stocks">
 			<h5><strong>Latest Price:</strong> ${{ stock.latestPrice }}</h5>
 			<h5><strong>Yesterday's Price:</strong> ${{ stock.previousClose }}</h5>
 			<h5><strong>Percent Change:</strong> {{ stock.changePercent }}</h5>
@@ -36,3 +54,5 @@
 <!-- {{#each stock}}
 	{{@key}} | {{this}}<br>
 {{/each}} -->
+
+</body>

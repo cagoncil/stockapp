@@ -2,14 +2,71 @@ body, html {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	overflow:hidden;
 	background-color: #292b2c;
 }
 
+.navbar-dark .navbar-brand, .navbar-dark .navbar-nav .nav-link {
+	color: #D7CDC1; 
+	padding-right: 20px;
+	font-family: 'Raleway';
+}
+
+.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus,  /*Changes color of navbar-brand*/
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus /*Changes color of all the navbar links*/ {
+	text-decoration: none;
+	background-color: transparent !important;
+	color: #e29581;
+}
+
+.navbar-toggler:focus, button .navbar-toggler:focus {
+	outline-color: rgb(207,118,111);
+}
+
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(215, 205, 193, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.navbar-toggler {
+	border: 1px solid rgb(215, 205, 193) !important;
+}
+
+.navbar-toggler:hover {
+	border: 1px solid rgb(207,118,111) !important;
+}
+
+form input, form button {
+	background-color: #e4dace !important;
+	color: #353839 !important;
+	font-family: 'Raleway';
+}
+
+input:focus, button:focus {
+	border: none !important;
+	box-shadow: 0 0 0 0.2rem rgba(255, 167, 153, 0.5) !important;
+}
+
+  ::placeholder {
+    color: #d87258 !important;
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    color: #d87258 !important;
+  }
+
+  ::-ms-input-placeholder { 
+    color: #d87258 !important;
+  }
+
+  ::selection {
+    color: #ebe6e0;
+    background: #e7a696;
+  }
+
 /*the bg-opacity property adds black opacity to background image*/
 .bg-opacity{
-    position: relative;
-    background-color: black;
+	position: relative;
+	height: calc(100vh - 56px - 34px)
 }
 
 .bg-opacity::before {
@@ -26,14 +83,11 @@ body, html {
     background-size: cover;
 }
 
-.container {
-	height: 100vh;
-}
-
 .content {
 	padding: 15vh 0;
+	width: 50vw;
+	margin: 0 auto;
 	color: #D7CDC1;
-	z-index: 100;
 	position: relative;
 }
 
@@ -48,43 +102,45 @@ body, html {
     opacity: 1;
 }
 
-h1, h3, a {
+h1, h3 {
 	color: #e29581;
 	font-family: 'Montseratt', sans-serif;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.5), 0px 2px 2px rgba(0,0,0,0.1), 0px 3px 3px rgba(0,0,0,0.05);
 }
 
 p {
-	font-size: 1.15em;
+	font-family: 'Merriweather';
+}
+
+.jumbo-container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+
+.jumbotron {
+	border-radius: 30px;
+	background-color: #e4dace;
+	width: 50vw;
+	margin: auto !important;
+	display: block;
+}
+
+.jumbotron h5 {
+	font-family: 'Merriweather';
+	color: #353839;
 }
 
 footer {
-  text-align: center;
-  color: #e29581;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  padding: 5px;
-  background-color: #292b2c;
+	text-align: center;
+	color: #e29581;
+	padding: 5px;
+	background-color: #292b2c;
+	font-family: 'Raleway';
 }
-
-
- .navbar-toggler:focus, button .navbar-toggler:focus {
- 	outline-color: rgb(207,118,111);
- }
-
-/* input:focus, input .form-control:focus, .form-control:focus {
-	outline-color: none;
-	border-color: 1px solid #292b2c;
- }*/
-
 
 /*=========== Stock Lookup ===========*/
-
-.break {
-	height: 50px;
-}
 
 .stocks {
 	z-index: 2;
@@ -106,20 +162,73 @@ footer {
 
 /*========== Media Queries ===========*/
 
- @media only screen and (max-width: 600px) {
+@media (max-width: 1200px) {
+
+	.jumbotron {
+		border-radius: 25px;
+		width: 70vw;
+		margin: auto !important;
+	}
+
+	.jumbotron h1 {
+		font-size: 2.5em;
+	}
+
+	.jumbotron h5 {
+		font-family: 'Merriweather';
+		font-size: 1em;
+		color: #353839;
+	}
+  
+}
+
+@media (max-width: 992px) {
+
+	form.form-inline.my-lg-0 {
+		padding: 0 0 0.5rem 0;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
  	
-	  h1 {
+	h1 {
 	    margin: 0;
 	    font-size: calc(2.5em + 6 * ((100vw - 320px) / 680));
-	  }
+	}
 
-	  h5 {
-	    margin: 0.2em 0;
-	    font-size: calc(1.15em + 6 * ((100vw - 320px) / 680));
-	  }
+	h5 {
+		margin: 0.2em 0;
+		font-size: calc(1.15em + 6 * ((100vw - 320px) / 680));
+	}
+	
+	nav {
+		padding: 0 0 0.75rem 0;
+	}
+
+	input {
+		margin: 0 0 0.75rem 0;
+	}
 
 	.content {
 		padding: 5vh 0;
+		width: 80vw;
 	}
 
- }
+	.jumbotron {
+		border-radius: 20px;
+		width: 85vw;
+		margin: auto !important;
+	}
+
+	.jumbotron h1 {
+		font-size: 2.5em;
+	}
+
+	.jumbotron h5 {
+		font-family: 'Merriweather';
+		font-size: 1em;
+		color: #353839;
+	}
+
+}

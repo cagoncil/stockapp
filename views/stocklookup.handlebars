@@ -15,15 +15,34 @@
 		  <hr class="my-4">
 			<div class="row rounded">
 			<div class="col-xs-12 mx-auto stocks">
-				<h5><strong>Latest Price:</strong> ${{ stock.latestPrice }}</h5>
-				<h5><strong>Yesterday's Price:</strong> ${{ stock.previousClose }}</h5>
-				<h5><strong>Percent Change:</strong> {{ stock.changePercent }}</h5>
-				<h5><strong>Year-To-Date Change:</strong> {{ stock.ytdChange }}</h5>
-				<h5><strong>Market Cap:</strong> {{ stock.marketCap }}</h5>
-				<h5><strong>52 Week High:</strong> ${{ stock.week52High }}</h5>
-				<h5><strong>52 Week Low:</strong> ${{ stock.week52Low }}</h5>
+				<h5><strong>Latest Price:</strong> ${{ stock.latestPrice }}</h5>
+				<h5><strong>Yesterday's Price:</strong> ${{ stock.previousClose }}</h5>
+				<h5><strong>Percent Change:</strong> <span id='perChange'></span></h5>
+				<h5><strong>Year-To-Date Change:</strong> <span id='ytd'></span></h5>
+				<h5><strong>Market Cap:</strong> {{ stock.marketCap }}</h5>
+				<h5><strong>52 Week High:</strong> <span id='high'></span></h5>
+				<h5><strong>52 Week Low:</strong> <span id='low'></span></h5>
 			</div>
 			</div>
 		</div>
 	</div>
 </body>
+
+<script>
+
+	const convertData = (dataId, apiData, sym, num) => {
+		document.getElementById(dataId).textContent = sym + apiData.toFixed(num)
+	}
+
+	convertData('perChange', {{ stock.changePercent }}, '', 3)
+	convertData('ytd', {{ stock.ytdChange }}, '', 3)
+	convertData('high', {{ stock.week52High }}, '$', 2)
+	convertData('low', {{ stock.week52Low }}, '$', 2)
+
+	// const perChange = {{ stock.changePercent }}.toFixed(3)
+	// document.querySelector('#perChange').textContent = perChange
+
+	// const high = {{ stock.week52High }}.toFixed(2)
+	// document.querySelector('#high').textContent = '$' + high
+
+</script>
